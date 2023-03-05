@@ -13,20 +13,27 @@ const createCard =(cardData, buttons = true)=> {
   cardImg.src = cardData.product_image;
   cardImg.alt = cardData.product_name;
 
+  const infoDiv = document.createElement("div");
+  infoDiv .className = "info";
+
   const cardTitle = document.createElement("h3");
   cardTitle.textContent = cardData.product_name;
-  card.setAttribute("id", cardData.product_name.replace(" ", "_"))
 
   const price = document.createElement("p");
   price.textContent = formatter.format(cardData.product_price);
 
-  card.append(cardImg, cardTitle, price)
+  infoDiv .append(cardTitle, price);
+
+  card.append(cardImg, infoDiv)
   
   if (buttons){
+    const actionsDiv = document.createElement("div");
+    actionsDiv.className = "actions";
     const addButton = createAddButton(cardData);
     const viewButton = createViewButton(cardData);
 
-    card.append(addButton, viewButton);
+    actionsDiv.append(addButton, viewButton)
+    card.append(actionsDiv);
   }
 
   return card;

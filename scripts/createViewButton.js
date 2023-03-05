@@ -4,15 +4,13 @@ import renderProducts from "./renderProducts.js";
 
 const modal = document.querySelector(".modal");
 
-
-
 const openModal =(ev, cardData)=> {
   modal.style.height = "100%";
   const cardCopy = createCard(cardData);
-  cardCopy.setAttribute("id", "modal_"+cardCopy.id);
 
   modal.replaceChildren(cardCopy);
 }
+
 const closeModal =(ev)=> {
   modal.style.height = "0%";
   renderProducts(products);

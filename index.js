@@ -46,6 +46,20 @@ renderProducts(products);
 
 updateCart();
 
+const cartList = document.getElementById("cart-list");
+
+document.body.addEventListener("click", ()=> {
+  cartList.classList.remove("open");
+  // close cart drop down upon clicking anywhere, except ⬇️
+})
+cartList.addEventListener("click", (ev)=> {
+  ev.stopPropagation();
+})
+document.querySelector('[alt="shopping-cart"]').addEventListener("click", (ev)=> {
+  ev.stopPropagation();
+  cartList.classList.toggle("open");
+})
+
 window.addEventListener("beforeunload", ()=> {
   localStorage.setItem("products", JSON.stringify(products));
 });

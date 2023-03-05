@@ -20,9 +20,9 @@ const createAddButton =(cardData)=> {
   button.className = "add-button";
   
   const addIcon = new Image();
-  addIcon.src = "../media/cart-plus.svg";
+  addIcon.src = "/media/cart-plus.svg";
   const removeIcon = new Image();
-  removeIcon.src = "../media/cart-minus.svg";
+  removeIcon.src = "/media/cart-minus.svg";
 
   if (cardData.added_to_cart){
     button.title = "remove from cart";

@@ -21,10 +21,10 @@ const createViewButton =(cardData)=> {
   button.className = "view-button";
   
   const viewIcon = new Image();
-  viewIcon.src = "../media/view.svg";
+  viewIcon.src = "/media/view.svg";
 
   const unviewIcon = new Image();
-  unviewIcon.src = "../media/unview.svg";
+  unviewIcon.src = "/media/unview.svg";
   
   if (modal.style.height == "100%") {
     button.title = "exit view";

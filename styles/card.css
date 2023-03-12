@@ -10,6 +10,7 @@
  .card > img {
   width: 100%;
   height: 29rem;
+  object-fit: contain;
 }
 
 .card .info {
